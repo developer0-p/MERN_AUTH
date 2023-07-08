@@ -28,7 +28,7 @@ const LoginScreen = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                         type='password'
-                        placehold er='Enter Password'
+                        placeholder='Enter Password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     ></Form.Control>

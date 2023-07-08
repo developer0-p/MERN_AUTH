@@ -42,7 +42,7 @@ const RegisterScreen = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                         type='password'
-                        placehold er='Enter Password'
+                        placeholder='Enter Password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     ></Form.Control>
@@ -52,7 +52,7 @@ const RegisterScreen = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
                         type='password'
-                        placehold er='Confirm Password'
+                        placeholder='Confirm Password'
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     ></Form.Control>
