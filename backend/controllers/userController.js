@@ -73,8 +73,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
 // @route            PUT /api/users/profile
 // @access           Private
 const updateUserProfile = asyncHandler(async (req, res) => {
+    console.log(req.body)
     const user = await User.findById(req.user._id)
-
     if (user) {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email

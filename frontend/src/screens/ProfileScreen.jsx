@@ -19,7 +19,6 @@ const ProfileScreen = () => {
     const dispatch = useDispatch()
 
     const { userInfo } = useSelector((state) => state.auth)
-
     const [updateProfile, { isLoading }] = useUpdateUserMutation()
 
 
@@ -33,19 +32,13 @@ const ProfileScreen = () => {
         if (password !== confirmPassword) {
             toast.error('Passwords do not match!')
         } else {
-            // try {
-            //     const res = await updateProfile({
-            //         _id: userInfo._id,
-            //         name,
-            //         email,
-            //         password
-            //     }).unwrap()
-            //     dispatch(setCredencials({ ...res }))
-            //     toast.success('Profile updated!')
-            // } catch (err) {
-            //     toast.error(err?.data?.message || err.error)
-            // }
-            console.log('submit');
+            try {
+                const res = await updateProfile({ _id: userInfo._id, name, email, password }).unwrap()
+                dispatch(setCredencials({ ...res }))
+                toast.success('Profile updated!')
+            } catch (err) {
+                toast.error(err?.data?.message || err.error)
+            }
         }
     }
     return (
